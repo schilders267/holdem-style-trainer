@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hold'em Capture</title>
+    <link rel="stylesheet" href="/styles.css?v=3" />
+  </head>
+  <body class="capture-page">
+    <main class="capture-shell">
+      <section class="capture-panel">
+        <div class="topbar">
+          <div>
+            <p class="eyebrow">Phone capture</p>
+            <h1>Hold'em Style Trainer</h1>
+          </div>
+          <a class="icon-link" href="/dashboard" aria-label="Open dashboard" title="Open dashboard">▦</a>
+        </div>
+
+        <label class="camera-drop" for="imageInput">
+          <span class="camera-symbol">◎</span>
+          <span class="camera-title">Snap and send</span>
+          <span class="camera-meta">Camera or photo library</span>
+        </label>
+        <input id="imageInput" type="file" accept="image/*" capture="environment" />
+
+        <label class="field-label" for="note">Session note</label>
+        <input id="note" class="text-field" autocomplete="off" placeholder="Table, drill, or hand type" />
+
+        <div class="preview-wrap" hidden>
+          <img id="preview" alt="Selected screenshot preview" />
+        </div>
+
+        <div id="confirmation" class="send-confirmation" hidden>
+          <strong>Sent</strong>
+          <span>Desktop dashboard received the snapshot.</span>
+        </div>
+
+        <button id="sendBtn" class="primary-btn" disabled>
+          <span class="btn-icon">↑</span>
+          Auto-send ready
+        </button>
+
+        <p id="status" class="status-line" role="status">Waiting for an image.</p>
+      </section>
+    </main>
+    <script src="/capture.js?v=3" type="module"></script>
+  </body>
+</html>

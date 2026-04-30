@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hold'em Dashboard</title>
+    <link rel="stylesheet" href="/styles.css?v=29" />
+  </head>
+  <body>
+    <main class="dashboard-layout">
+      <header class="dashboard-header">
+        <div>
+          <p class="eyebrow">Desktop dashboard</p>
+          <h1>Player Style Stream</h1>
+        </div>
+        <div class="header-actions">
+          <a class="text-action" href="/capture">Phone capture</a>
+          <button id="clearPlayersBtn" class="danger-action">Clear players</button>
+          <span id="connection" class="connection-pill">Connecting</span>
+        </div>
+      </header>
+
+      <section class="summary-band">
+        <div>
+          <span class="metric-label">Captures</span>
+          <strong id="captureCount">0</strong>
+        </div>
+        <div>
+          <span class="metric-label">Players Read</span>
+          <strong id="playerCount">0</strong>
+        </div>
+        <div>
+          <span class="metric-label">Mode</span>
+          <strong id="modeLabel">Practice</strong>
+        </div>
+      </section>
+
+      <section class="search-band" aria-label="Search player stats">
+        <label for="playerSearch">Player search</label>
+        <input id="playerSearch" type="search" autocomplete="off" placeholder="Type a player name" />
+        <button id="clearSearch" class="icon-button" aria-label="Clear player search" title="Clear player search">×</button>
+      </section>
+
+      <section class="phone-band" aria-label="Phone capture link">
+        <div>
+          <span class="metric-label">Phone Links</span>
+          <div class="phone-links">
+            <a id="phoneCaptureUrl" href="/capture">Loading local name...</a>
+            <a id="phoneLanUrl" href="/capture">Loading Wi-Fi address...</a>
+          </div>
+        </div>
+        <button id="copyPhoneUrlBtn" class="text-action">Copy</button>
+      </section>
+
+      <section class="baseline-band" aria-label="CoinPoker baseline">
+        <div class="baseline-heading">
+          <span class="metric-label">CoinPoker Baseline</span>
+          <strong id="baselineUpdated">Not set</strong>
+        </div>
+        <div id="baselineStats" class="baseline-stats"></div>
+        <button id="updateBaselineBtn" class="text-action">Update baseline</button>
+      </section>
+
+      <section class="workspace-grid">
+        <aside class="capture-list-panel">
+          <div class="section-heading">
+            <h2>Table <span id="tableSeatCount" class="seat-count">0/9</span></h2>
+            <div class="sidebar-actions">
+              <button id="refreshBtn" class="icon-button" aria-label="Refresh players" title="Refresh players">↻</button>
+              <button id="clearTableBtn" class="icon-button" aria-label="Clear table" title="Clear table">×</button>
+            </div>
+          </div>
+          <div id="captureList" class="capture-list"></div>
+        </aside>
+
+        <section class="analysis-panel">
+          <div id="emptyState" class="empty-state">
+            <span class="empty-mark">◇</span>
+            <h2>Waiting for the first screenshot</h2>
+          </div>
+
+          <article id="analysisView" hidden>
+            <div class="board-summary">
+              <div class="section-heading">
+                <div>
+                  <p id="scopeLabel" class="eyebrow">All snapshots</p>
+                  <h2 id="activeTitle">Player Board</h2>
+                </div>
+                <div class="board-actions">
+                  <span id="activeStatus" class="status-badge">Live</span>
+                  <button id="showAllBtn" class="text-action">All players</button>
+                </div>
+              </div>
+              <p id="tableSummary" class="table-summary"></p>
+            </div>
+
+            <div class="section-heading players-heading">
+              <h2 id="playersTitle">All Player Profiles</h2>
+            </div>
+            <div id="players" class="players-grid"></div>
+          </article>
+        </section>
+      </section>
+    </main>
+    <script src="/dashboard.js?v=29" type="module"></script>
+  </body>
+</html>
