@@ -20,6 +20,26 @@ The dashboard shows both the `.local` phone link and the current Wi-Fi IP link w
 
 For local-only testing, run `HOST=127.0.0.1 npm start`.
 
+## Environments
+
+Use the alpha/stable app from this folder on port `3000`:
+
+```bash
+npm run use
+```
+
+Develop the separate Holdem Coach copy from this folder on port `3001`:
+
+```bash
+npm run coach:dev
+```
+
+Stable dashboard: `http://localhost:3000/dashboard`
+
+Development dashboard: `http://localhost:3001/dashboard`
+
+Each folder keeps its own `data/` directory, so development screenshots, players, and baselines do not mix with the stable app.
+
 ## AI Setup
 
 Without an API key, the app runs in demo mode so the async workflow can be tested.

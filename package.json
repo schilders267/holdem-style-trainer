@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "start": "node server.js",
-    "dev": "node --watch server.js"
+    "dev": "node --watch server.js",
+    "use": "PORT=3000 node server.js",
+    "coach": "cd ../holdem-coach && PORT=3001 node server.js",
+    "coach:dev": "cd ../holdem-coach && PORT=3001 node --watch server.js"
   },
   "engines": {
     "node": ">=18"
